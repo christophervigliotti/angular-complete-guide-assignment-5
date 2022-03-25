@@ -1,5 +1,5 @@
 import { EventEmitter, Injectable } from "@angular/core";
-import { CounterService } from './services/counter.service';
+import { CounterService } from './counter.service';
 
 @Injectable()
 

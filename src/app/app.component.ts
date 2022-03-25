@@ -26,7 +26,7 @@ export class AppComponent {
     this.inactiveUsers = this.usersService.inactiveUsers;
   }
 
-  // we should only need one method here
+  // we should only need one method here (or this goes in child components?)
   changeStatus(name: string){
     console.log('app.component > changeStatus');
     this.usersService.changeStatus(name);
