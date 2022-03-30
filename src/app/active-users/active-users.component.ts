@@ -20,6 +20,6 @@ export class ActiveUsersComponent {
   onSetToInactive(id: number) {
     // old code... this.userSetToInactive.emit(id);
     console.log('active-users > onSetToInactive');
-    this.usersService.changeStatus(id);
+    this.usersService.setToInactive(id);
   }
 }

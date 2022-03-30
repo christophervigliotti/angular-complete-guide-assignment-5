@@ -9,12 +9,8 @@ This is one of several repos that I created for the course "Angular - The Comple
 
 ## Requirements
 
-* add users service to manage users array(s) globally
-* add a counters service to count the number of times that a user is toggled, output the results
-
-## Development Notes
-
-TODO: next up, verify that the calls to loggingService in account.component onSetTo() and new-account.component.onCreateAccount() can be commented out and that logging service still fires from within accounts.service.  Then apply similar functionallity to call counterService within usersService.
+* DONE add users service to manage users array(s) globally
+* DONE add a counters service to count the number of times that a user is toggled, output the results
 
 # Misc
 

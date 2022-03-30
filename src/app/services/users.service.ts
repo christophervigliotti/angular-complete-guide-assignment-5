@@ -7,13 +7,36 @@ export class UsersService {
     activeUsers = ['Max', 'Anna'];
     inactiveUsers = ['Chris', 'Manu'];
 
-    // do I need this?
     statusUpdated = new EventEmitter<string>();
 
     constructor(private counterService: CounterService){}
 
-    changeStatus(id: number){
-        
+    setToActive(id: number){
+        console.log('users.service > setToActive ' + id);
+        var user_to_move = this.inactiveUsers[id];
+        this.inactiveUsers.splice(id,1);
+        this.activeUsers.push(user_to_move);
+        this.counterService.doCount();
+    }
+
+    setToInactive(id: number){
+        console.log('users.service > setToInactive ' + id);
+        var user_to_move = this.activeUsers[id];
+        this.activeUsers.splice(id,1);
+        this.inactiveUsers.push(user_to_move);
+        this.counterService.doCount();
+    }
+
+    // I could do it like this (or even keep all of the logic in setTo)
+    setTo(id: number, active_or_inactive: string){
+        console.log('users.service > setTo');
+        if(active_or_inactive == 'active'){
+            this.setToActive(id);
+        }else if(active_or_inactive == 'inactive'){
+            this.setToInactive(id);
+        }else{
+            // throw some sort of error
+        }
     }
 
     /*

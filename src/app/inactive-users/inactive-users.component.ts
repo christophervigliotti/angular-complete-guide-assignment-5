@@ -18,7 +18,7 @@ export class InactiveUsersComponent {
 
   onSetToActive(id: number) {
     console.log('inactice-users > onSetToActive');
-    this.usersService.changeStatus(id);
+    this.usersService.setToActive(id);
   }
 
   /*
