@@ -1,4 +1,4 @@
-import { EventEmitter, Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { CounterService } from './counter.service';
 
 @Injectable()
@@ -7,8 +7,6 @@ export class UsersService {
     activeUsers = ['Max', 'Anna'];
     inactiveUsers = ['Chris', 'Manu'];
 
-    statusUpdated = new EventEmitter<string>();
-
     constructor(private counterService: CounterService){}
 
     setToActive(id: number){
@@ -16,7 +14,7 @@ export class UsersService {
         var user_to_move = this.inactiveUsers[id];
         this.inactiveUsers.splice(id,1);
         this.activeUsers.push(user_to_move);
-        this.counterService.doCount();
+        this.counterService.doCount('inactive_to_active');
     }
 
     setToInactive(id: number){
@@ -24,7 +22,7 @@ export class UsersService {
         var user_to_move = this.activeUsers[id];
         this.activeUsers.splice(id,1);
         this.inactiveUsers.push(user_to_move);
-        this.counterService.doCount();
+        this.counterService.doCount('active_to_inactive');
     }
 
     // I could do it like this (or even keep all of the logic in setTo)
