@@ -12,6 +12,13 @@ export class UsersService {
 
     constructor(private counterService: CounterService){}
 
+    changeStatus(id: number){
+        
+    }
+
+    /*
+    cool idea to handle this by the string and not array position...
+    ...cool but problematic idea
     changeStatus(name: string){
         console.log('users.service > changeStatus');
 
@@ -35,5 +42,6 @@ export class UsersService {
           if(item === name) anArray.splice(index,1);
         });
         return anArray;
-     }
+    }
+    */
 }
